@@ -93,12 +93,13 @@ export const Onboarding = () => {
                         flex: 1 , 
                         transform: [{translateX: multiply(x, -1)}]
                         }}>
-                        { slides.map(({subtitle, discription}, index)=>(
-                            <Subslide 
-                            key={index} 
-                            onPress={() => {
-                                if(scroll.current){
-                                    scroll.current
+                        { 
+                            slides.map(({subtitle, discription}, index)=>(
+                                <Subslide 
+                                key={index} 
+                                onPress={() => {
+                                    if(scroll.current){
+                                        scroll.current
                                         .getNode()
                                         .scrollTo({ x: width * ( index + 1), animated: true })
                                     }

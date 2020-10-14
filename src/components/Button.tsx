@@ -17,7 +17,7 @@ export const Button = ({variant, label, onPress}: ButtonProps) => {
         <RectButton 
             style={[styles.container, {backgroundColor}]}
             {...{onPress}}>
-                <Text style={[{color}]}>{label}</Text>
+                <Text style={{color}}>{label}</Text>
         </RectButton>
     );
 };

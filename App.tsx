@@ -8,6 +8,7 @@ import  Welcome  from './src/Authentication/Welcome';
 // Styling
 import { ThemeProvider } from '@shopify/restyle';
 import  theme  from './src/components/Theme/Theme';
+import { Routes } from './src/components/Navigation';
 
 
 const fonts = {
@@ -16,7 +17,7 @@ const fonts = {
   "SFProText-Regular": require("./assets/fonts/SF-Pro-Text-Regular.otf"),
 };
 
-const AuthenticationStack = createStackNavigator()
+const AuthenticationStack = createStackNavigator<Routes>()
 
 const AuthenticationNavigator = () => {
   return(
