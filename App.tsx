@@ -4,6 +4,11 @@ import {createStackNavigator} from '@react-navigation/stack'
 import Onboarding from './src/Authentication/Onboarding';
 import LoadAssets from './src/components';
 import { NavigationContainer } from '@react-navigation/native';
+import  Welcome  from './src/Authentication/Welcome';
+// Styling
+import { ThemeProvider } from '@shopify/restyle';
+import  theme  from './src/components/Theme/Theme';
+
 
 const fonts = {
   "SFProText-Bold": require("./assets/fonts/SF-Pro-Text-Bold.otf"),
@@ -17,6 +22,7 @@ const AuthenticationNavigator = () => {
   return(
   <AuthenticationStack.Navigator headerMode="none">
     <AuthenticationStack.Screen name="Onboarding" component={Onboarding}/>
+    <AuthenticationStack.Screen name="Welcome" component={Welcome}/>
   </AuthenticationStack.Navigator>
   );
 };
@@ -24,9 +30,10 @@ const AuthenticationNavigator = () => {
 
 export default function App() {
   return (
+    <ThemeProvider {...{theme}}>
       <NavigationContainer>
         <AuthenticationNavigator />
       </NavigationContainer>
-    
+    </ThemeProvider>
   );
 }

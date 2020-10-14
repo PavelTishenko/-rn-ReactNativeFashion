@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Dimensions, StyleSheet, Image } from 'react-native';
-
+import { View, Dimensions, StyleSheet, Image } from 'react-native';
+import  Text from '../../components/Theme';
 const {width, height} = Dimensions.get('window');
 
 
@@ -22,7 +22,7 @@ export const Slide = ({label, right, picture}: SlideProps) => {
                 <Image source={require("../../../assets/1.png")} style={styles.picture}/>
             </View>
             <View style={[styles.labelContainer, {transform}]}>
-                <Text style={styles.label}>{label}</Text>
+                <Text variant="hero">{label}</Text>
             </View>
         </View>
     );
@@ -32,17 +32,9 @@ const styles = StyleSheet.create({
     container:{
         width: width
     },
-    label: {
-        fontSize: 80,
-        lineHeight: 80,
-        fontFamily: 'System',
-        color: 'white',
-        textAlign: 'center'
-    },
     labelContainer: {
         height: 100,
-        justifyContent: 'center',
-        
+        justifyContent: 'center', 
     },
     pictureContainer: {
         ...StyleSheet.absoluteFillObject,
